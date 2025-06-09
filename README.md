@@ -2,9 +2,9 @@
 
 Mô tả ngắn: SQL schema và dữ liệu mẫu cho hệ thống quản lý ban tổ chức cuộc đua và nhà tài trợ.
 
-## 📁 Cấu trúc file
-schema.sql # Tạo database và các bảng (tables, relationships)
-seed.sql # Dữ liệu mẫu ban đầu (INSERT statements)
+## 📁 File trong repo
+- `schema.sql` # Tạo database + bảng  
+- `seed.sql`   # Dữ liệu mẫu
 
 ## 🛠 Cách sử dụng
 ### Yêu cầu hệ thống
@@ -12,11 +12,14 @@ seed.sql # Dữ liệu mẫu ban đầu (INSERT statements)
 - Quyền admin để tạo database
 
 ### Các bước thực hiện
-### Các bước thực hiện
 1. **Chạy schema trước** (tạo database và bảng):
    ```bash
    mysql -u [username] -p < sql/schema.sql
-2. Thêm dữ liệu:
+2. **Thêm dữ liệu**:
+   ```bash
    mysql -u [username] -p gcs < sql/seed.sql
 
-   *Trong đó: username là username trên máy của bạn
+⚠️Lưu ý:
+- Thay [username] bằng username MySQL của bạn
+- File schema.sql phải chạy trước seed.sql
+- Dữ liệu trong seed.sql chỉ dùng cho mục đích demo
